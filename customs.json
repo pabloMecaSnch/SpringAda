@@ -1,0 +1,23 @@
+{
+    "elements": {},
+    "attributes": {
+        "th:text": {
+            "context": "div"
+        },
+        "th:if": {
+            "context": "h1"
+        },
+        "integrity": {
+            "context": "link"
+        },
+        "th:action": {
+            "context": "form"
+        },
+        "th:each": {
+            "context": "div"
+        },
+        "th:field": {
+            "context": "input"
+        }
+    }
+}
