@@ -12,7 +12,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 
-public interface TareaRepository extends JpaRepository<Usuario,Integer>{
+public interface TareaRepository extends JpaRepository<Tarea,Integer>{
 //    
 //    @Query("select u from Usuario u" )
 //    public List<Usuario> verUsuarios();
