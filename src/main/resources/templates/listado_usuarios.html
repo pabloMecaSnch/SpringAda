@@ -42,7 +42,7 @@ and open the template in the editor.
               <td th:text="${usuario.observaciones}"></td>
               <td>
                  <div th:each="tarea:${usuario.tareaList}">
-                    <p th:text="${tarea.nombre}"/>
+                     <a th:href="@{tarea_edit/}+${tarea.tareaId}"><p th:text="${tarea.nombre}"/></a>
                  </div>
               </td>
             </tr>

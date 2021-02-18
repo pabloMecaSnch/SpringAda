@@ -11,6 +11,7 @@ import com.example.gestionUsuarios2.negocio.service.UsuarioService;
 import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -60,12 +61,19 @@ public class InicioController {
         return "crear_tarea";
     }
     @PostMapping("/guardar_tarea")
-    public String guardarTarea(Tarea tarea, @RequestParam int id_usuario){
-        System.out.println(tarea.getNombre());
-        Usuario usu = new Usuario(id_usuario);
+    public String guardarTarea(Tarea tarea, @RequestParam Integer selectUsuario){
+        System.out.println(selectUsuario);
+        Usuario usu = new Usuario(selectUsuario);
         tarea.setUsuarioId(usu);
         usuService.guardarTarea(tarea);
         return"redirect:/";
+    }
+    @RequestMapping("/tarea_edit/{id}")
+    public String editTarea(@PathVariable(value="id") Integer tareaId, Model modelo){
+        Tarea tareaBase = usuService.getTareaById(tareaId);
+        modelo.addAttribute("tarea",tareaBase);
+        System.out.println(tareaBase.getNombre());
+        return "/tarea_edit";
     }
     
 }

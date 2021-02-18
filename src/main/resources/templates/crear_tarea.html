@@ -19,12 +19,10 @@ and open the template in the editor.
               <input type="text" class="form-control" id="InputNombre" placeholder="Introduzca nombre de usuario" th:field="*{nombre}">
             </div>
             <div class="form-group">
-              <label for="InputContrasena">Usuario</label>
-              <input name= "id_usuario" type="number" class="form-control" id="InputContrasena" placeholder="id_Usuario">
-            </div>
-            <div>
-                <select>
-                    <option th:each="usuario:${usuarios}" th:text="${usuario.id_Usuario}"></option>
+             <label for="InputUsuario">Usuario</label>
+                <select id="InputUsuario" name="selectUsuario">
+                    <option th:each="usuario:${usuarios}" th:text="${usuario.nombre}" th:value="${usuario.usuarioId}" >
+                    </option>
                 </select>
             </div>
             <button type="submit" class="btn btn-primary">Enviar</button>

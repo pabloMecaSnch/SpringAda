@@ -40,5 +40,8 @@ public class UsuarioService {
         
                 
     }
+   public Tarea getTareaById(int id){
+       return tareaRepository.getOne(id);
+   }
     
 }
